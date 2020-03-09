@@ -1,0 +1,37 @@
+# HW grading scale: check(++) --> excellent (good code and analysis AND also completed bonus problem)  
+#                   check(+) --> excellent (good code and analysis)  
+#                   check    --> satisfactory (minor shortcomings in code and/or analysis)
+#                   check(-) --> significant problems w/code or analysis
+
+1) Problem 1 (area.cpp embellishments): 
+Looks good.
+
+2)Problem 2 (sum up/down): 
+
+Your code, figure and output data look good, but the analysis as to which one is better is wrong. (Hint: the 
+problem just a bit more complicated version of the 1+eps+eps... vs eps + eps +...+1 
+problem we did in class.) 
+
+One coding nitpick-- it's bad practice to mix ints/floats in your sum_up and sum_down functions. It's best to 
+be explicit (e.g., sum += num/float(n) instead of sum += num/n  where num is declared a float and n declared int).
+ 
+3) Problem 3 (bessel functions): 
+
+The graph looks ok but I don't see any analysis. What do the different regions signify? 
+I.e., what can you conclude in the various regions of x?  Note that the relative error plot
+doesn't tell you WHICH result (upward or downward recursion) is more reliable. How could
+you determine which one is best in each region of x? (Hint: GSL)  
+
+(Sidenote: If interested, you can understand numerical value of the slope between x=1 and 10
+using the short-distance x << l expressions of the spherical bessel and neumann functions. See Ch. 4 
+notes. I wonder if one can play similar games for the VERY steep 
+region above x = 30 using the asymptotic x >> l expressions for jl(x) and nl(x).)
+
+
+4) Extra problem (roundoff distribution):
+NA
+
+##### HW grade = check 
+
+Upgrade your grade: Fix the analysis in 2) and 3) to get a check(+). 
+Additionally do the bonus for a check(++). 
