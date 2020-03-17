@@ -109,7 +109,8 @@ main (void)
   my_file2.close();    // close the output file
   cout << "Look at " << my_filename2 << " to see if this worked." 
        << endl << endl;
-
+    
+  //************************************************
   // now try a float in the filename
   my_filename_stream.str ("");  // clear the string stream
   float x = 3.14159;    // more digits than we plan to use
@@ -129,6 +130,8 @@ main (void)
   cout << "Look at " << my_filename_stream.str() 
        << " to see if this worked." << endl << endl;
     
+    //************************************************
+    // Strings and Things (2)
     // Loop j through 0,1,2,3
     for (int j = 0; j <= 3; j++)
     {
@@ -150,6 +153,27 @@ main (void)
         cout << "Look at " << my_filenames2 << " to see if this worked."
         << endl << endl;
     }
+    
+    //************************************************
+    // Strings and Things (3)
+    // now try a double in the filename
+    ostringstream my_filename_stream_double;
+    double alpha = 2.71828;    // more digits than we plan to use
+    my_filename_stream_double << "test_stream" << "_x" << setprecision (2) << alpha
+    << ".out";
+    
+    // don't introduce an intermediate string for the name this time
+    cout << "The output filename is " << my_filename_stream_double.str() << endl;
+    // use .str() to convert to a string, then .c_str() to convert to a char *
+    ofstream my_filed;   // new filename (could have re-used my_file2)
+    my_filed.open (my_filename_stream_double.str().c_str());
+    
+    my_filed << "This is a test of putting two digits of the double " << alpha
+    << " in this filename!" << endl;
+    
+    my_filed.close();    // close the output file
+    cout << "Look at " << my_filename_stream_double.str()
+    << " to see if this worked." << endl << endl;
 
   return (0);
 }
