@@ -23,9 +23,10 @@
 //******************************************************************
 // include files
 #include <iostream>    // note that .h is omitted
-#include <iomanip>    // note that .h is omitted
-#include <fstream>    // note that .h is omitted
+#include <iomanip>     // note that .h is omitted
+#include <fstream>     // note that .h is omitted
 #include <string>
+#include <sstream>     // Added this to change file name
 using namespace std;    // we need this when .h is omitted
 #include <cmath>
 #include "diffeq_routines.h"  // diffeq routine prototypes
@@ -72,7 +73,7 @@ main (void)
   int T_skip = 1000;    // every T_skip points means once every T_ext
   double h = T_ext / double(T_skip);  // initialize mesh spacing 
   double tmin = 0.;      // starting t value 
-  double tmax = 50.;      // last t value 
+  double tmax = 100.;      // last t value 
   double plot_min = tmin;    // first t value to plot 
   double plot_max = tmax;    // last t value to plot 
   int plot_skip = 10;      // plot every plot_skip points
@@ -166,8 +167,15 @@ main (void)
     cout << "Plotting now (wait until complete) . . ." << endl;  
 
     // open the output file 
-    ofstream out;    // declare the output file
-    out.open ("diffeq_pendulum.dat", ofstream::trunc); 
+//    ofstream out;    // declare the output file
+//    out.open ("diffeq_pendulum" + to_string(alpha) + ".dat", ofstream::trunc);
+      
+    ostringstream my_filename_stream;
+    my_filename_stream << "diffeq_pendulum" << setprecision (2) << alpha
+    << ".dat";
+      
+    ofstream out;   // new filename (could have re-used my_file2)
+    out.open (my_filename_stream.str().c_str());
 
     // load the force parameters into the structure 
     rhs_parameters.omega0 = omega0;
