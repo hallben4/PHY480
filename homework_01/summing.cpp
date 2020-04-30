@@ -4,7 +4,7 @@
 //
 //  Programmer:  Ben Hall
 //
-//  Answer to part (c): For N < 3, the error between the two methods is extremely small (the calculations are basically equally precise) and so at this scale it doesn't matter to much whether you sum up or down. The, right afte4r  N=4, the error starts to grow rapidly and so which method one uses matters more and more. It looks like the region of 4 <= log(N) <= 6 is a power law with approximate slope 2. This implies that in this region, the error scales qudratically with N. For N > 7, the error starts to asymptotically approach a constant, the slope goes to 1. Upward sum is more precise because with downward sum, one stars with a really large number and then adds smaller and smaller numbers so that by the end, one is adding very large numbers to very small numbers, which introduces error.
+//  Answer to part (c): For N < 3, the error between the two methods is extremely small (the calculations are basically equally precise) and so at this scale it doesn't matter to much whether you sum up or down. The, right after  N=4, the error starts to grow rapidly and so which method one uses matters more and more. It looks like the region of 4 <= log(N) <= 6 is a power law with approximate slope 2. This implies that in this region, the error scales qudratically with N. For N > 7, the error starts to asymptotically approach a constant, the slope goes to 1. Upward sum is more precise because with downward sum, one stars with a really large number and then adds smaller and smaller numbers so that by the end, one is adding very large numbers to very small numbers, which introduces error.
 //
 //*************************************************************************
 
