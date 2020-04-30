@@ -19,10 +19,14 @@
 
 // include files
 #include <cmath>
-#include "integ_methods.h"   // integration routine prototypes
+//#include "integ_methods.h"   // integration routine prototypes
 
 //************************************************************************
 
+extern double simpsons_rule ( int num_pts, float x_min, float x_max,
+                       float (*integrand) (float x) );    // Simpson's rule
+extern double milnes_rule ( int num_pts, float x_min, float x_max,
+                            float (*integrand) (float x) );    // Milne's rule
 
 // Integration using Simpson's rule
 double simpsons_rule ( int num_pts, float x_min, float x_max,

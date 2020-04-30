@@ -46,7 +46,7 @@ BASE=  integ_try
 
 # Put all C++ (or other) source files here.  NO SPACES after continuation \'s.
 SRCS= \
-integ_try.cpp \
+integ_try_final.cpp \
 integ_methods.cpp \
 
 # Put all header files here.  NO SPACES after continuation \'s.
